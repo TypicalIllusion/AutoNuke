@@ -14,8 +14,8 @@ namespace AutoNuke
 )]
     class AutoNuke : AbstractPlugin
     {
-        [Synapse.Api.Plugin.Config(section = "AutoNuke")]
         public static AutoNuke Singleton { get; private set; }
+        [Synapse.Api.Plugin.Config(section = "AutoNuke")]
         public static Config Config;
         public override void Load()
         {
