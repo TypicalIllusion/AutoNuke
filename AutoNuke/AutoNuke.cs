@@ -1,4 +1,6 @@
-﻿using Synapse.Api.Plugin;
+﻿using System.Collections.Generic;
+using MEC;
+using Synapse.Api.Plugin;
 
 namespace AutoNuke
 {
@@ -8,25 +10,19 @@ namespace AutoNuke
     LoadPriority = 0,
     Name = "AutoNuke",
     SynapseMajor = 2,
-    SynapseMinor = 2,
+    SynapseMinor = 3,
     SynapsePatch = 0,
-    Version = "2.0.0"
+    Version = "1.1.0"
 )]
     class AutoNuke : AbstractPlugin
     {
-        public static AutoNuke Singleton { get; private set; }
+        public static List<CoroutineHandle> Coroutine = new List<CoroutineHandle>();
         [Synapse.Api.Plugin.Config(section = "AutoNuke")]
         public static Config Config;
         public override void Load()
         {
-            Singleton = this;
             SynapseController.Server.Logger.Info("AutoNuke Loaded");
             new EventHandlers();
-        }
-
-        public override void ReloadConfigs()
-        {
-
         }
     }
 }
