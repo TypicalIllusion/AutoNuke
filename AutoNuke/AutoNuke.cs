@@ -1,4 +1,4 @@
-﻿using Synapse.Api.Plugin;
+using Synapse.Api.Plugin;
 
 namespace AutoNuke
 {
@@ -8,9 +8,9 @@ namespace AutoNuke
     LoadPriority = 0,
     Name = "AutoNuke",
     SynapseMajor = 2,
-    SynapseMinor = 2,
+    SynapseMinor = 3,
     SynapsePatch = 0,
-    Version = "2.0.0"
+    Version = "1.0.0"
 )]
     class AutoNuke : AbstractPlugin
     {
