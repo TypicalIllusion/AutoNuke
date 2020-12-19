@@ -12,7 +12,7 @@ namespace AutoNuke
     SynapseMajor = 2,
     SynapseMinor = 3,
     SynapsePatch = 0,
-    Version = "1.1.0"
+    Version = "1.2.0"
 )]
     class AutoNuke : AbstractPlugin
     {
