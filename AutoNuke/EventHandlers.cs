@@ -15,7 +15,7 @@ namespace AutoNuke
 
         private void Round_RoundStartEvent()
         {
-            if (AutoNuke.Config.AutoNukeTime > -1)
+            if (AutoNuke.Config.AutoNukeTime > -1 && !Map.Get.Nuke.Detonated)
             {
                 Timing.RunCoroutine(AutoNukeDur(AutoNuke.Config.AutoNukeTime));
             }
