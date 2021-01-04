@@ -29,7 +29,15 @@ namespace AutoNuke
         {
             yield return Timing.WaitForSeconds(AutoNuke.Config.AutoNukeTime);
             Map.Get.Nuke.StartDetonation();
-            Map.Get.Nuke.InsidePanel.Locked = true;
+            if (AutoNuke.Config.Cancelable)
+            {
+                Map.Get.Nuke.InsidePanel.Locked = true;
+            }
+            else
+            {
+                Map.Get.Nuke.InsidePanel.Locked = false;
+            }
+            Map.Get.SendBroadcast(5, AutoNuke.Config.AutoNukeMessage);
         }
     }
 }
