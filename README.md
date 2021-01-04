@@ -4,6 +4,8 @@ Nuke goes off after x amount of time.
 | Name | Type | Description | Default |
 | --- | --- | --- | --- |
 | `AutoNukeTime` | float | Toggles the plugin | 600 |
+| `Cancelable` | bool | should the nuke be canceled? | true |
+| `AutoNukeMessage` | string | What is the broadcast message? | 
 
 This plugin requires [Synapse](https://github.com/SynapseSL/Synapse)
 
