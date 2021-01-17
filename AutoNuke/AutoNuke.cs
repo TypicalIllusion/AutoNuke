@@ -10,9 +10,9 @@ namespace AutoNuke
     LoadPriority = 0,
     Name = "AutoNuke",
     SynapseMajor = 2,
-    SynapseMinor = 3,
-    SynapsePatch = 1,
-    Version = "1.2.1"
+    SynapseMinor = 4,
+    SynapsePatch = 2,
+    Version = "1.2.3"
 )]
     class AutoNuke : AbstractPlugin
     {

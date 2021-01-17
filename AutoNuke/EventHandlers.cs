@@ -10,7 +10,13 @@ namespace AutoNuke
         public EventHandlers()
         {
             Server.Get.Events.Round.RoundStartEvent += Round_RoundStartEvent;
-            Server.Get.Events.Round.RoundEndEvent += Round_RoundEndEvent;
+            Server.Get.Events.Round.RoundRestartEvent += Round_RoundRestartEvent;
+        }
+
+        private void Round_RoundRestartEvent()
+        {
+            foreach (CoroutineHandle coroutine in AutoNuke.Coroutine)
+                Timing.KillCoroutines(coroutine);
         }
 
         private void Round_RoundStartEvent()
@@ -19,11 +25,7 @@ namespace AutoNuke
             {
                 Timing.RunCoroutine(AutoNukeDur(AutoNuke.Config.AutoNukeTime));
             }
-        }
-        private void Round_RoundEndEvent()
-        {
-            foreach (CoroutineHandle coroutine in AutoNuke.Coroutine)
-                Timing.KillCoroutines(coroutine);
+            Map.Get.Nuke.InsidePanel.Locked = false;
         }
         private IEnumerator<float> AutoNukeDur(float duration)
         {
@@ -37,7 +39,10 @@ namespace AutoNuke
             {
                 Map.Get.Nuke.InsidePanel.Locked = false;
             }
-            Map.Get.SendBroadcast(5, AutoNuke.Config.AutoNukeMessage);
+            if (!string.IsNullOrWhiteSpace(AutoNuke.Config.AutoNukeMessage))
+            {
+                Map.Get.SendBroadcast(5, AutoNuke.Config.AutoNukeMessage);
+            }
         }
     }
 }
