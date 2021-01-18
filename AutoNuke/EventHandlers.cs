@@ -35,11 +35,7 @@ namespace AutoNuke
             {
                 Map.Get.Nuke.InsidePanel.Locked = true;
             }
-            else
-            {
-                Map.Get.Nuke.InsidePanel.Locked = false;
-            }
-            if (!string.IsNullOrWhiteSpace(AutoNuke.Config.AutoNukeMessage))
+            if (!string.IsNullOrWhiteSpace(AutoNuke.Config.AutoNukeMessage) && !Map.Get.Nuke.Detonated)
             {
                 Map.Get.SendBroadcast(5, AutoNuke.Config.AutoNukeMessage);
             }
