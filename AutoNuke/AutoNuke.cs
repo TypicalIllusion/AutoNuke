@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using MEC;
 using Synapse.Api.Plugin;
 
@@ -12,7 +12,7 @@ namespace AutoNuke
     SynapseMajor = 2,
     SynapseMinor = 4,
     SynapsePatch = 2,
-    Version = "1.2.3"
+    Version = "1.2.5"
 )]
     class AutoNuke : AbstractPlugin
     {
